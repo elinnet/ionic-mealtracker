@@ -14,13 +14,10 @@ app.controller('LoginCtrl', function ($scope, $state, AuthService) {
 		console.log("LoginCtrl::login");
 		if (form.$valid){
 			//TODO
-		} else {
-		console.log("Invalid form");
+			AuthService.login($scope.formData.email, $scope.formData.password);
+
 		}
-
-	};
-
-});
+};
 
 /*********************************************************************
  * SignupCtrl
@@ -40,5 +37,7 @@ app.controller('SignupCtrl', function ($scope, $state, AuthService) {
 				$scope.formData.name, $scope.formData.password);
 		}
 	};
+
+});
 
 });
