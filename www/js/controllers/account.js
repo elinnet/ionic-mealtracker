@@ -20,4 +20,6 @@ app.controller('AccountCtrl', function ($scope, $state, AuthService) {
 		console.log("AccountCtrl::logout");
 		//TODO
 	};
+
+
 });

@@ -25,6 +25,10 @@ app.controller('MealListCtrl', function ($scope, $ionicLoading, MealService) {
 		});
 	};
 
+	$scope.addPicture = function(){
+		console.log("Add Picture");
+	};
+
 });
 
 /*********************************************************************
