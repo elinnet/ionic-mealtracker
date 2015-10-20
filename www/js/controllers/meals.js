@@ -10,7 +10,7 @@ app.controller('MealListCtrl', function ($scope, $ionicLoading, MealService) {
 
 	// $ionicLoading.show();
 	$scope.meals.load().then(function () {
-		$ionicLoading.hide();
+		// $ionicLoading.hide();
 	});
 
 	$scope.refreshItems = function () {
@@ -19,16 +19,12 @@ app.controller('MealListCtrl', function ($scope, $ionicLoading, MealService) {
 		});
 	};
 
+
 	$scope.nextPage = function () {
 		$scope.meals.next().then(function () {
 			$scope.$broadcast('scroll.infiniteScrollComplete');
 		});
 	};
-
-	$scope.addPicture = function(){
-		console.log("Add Picture");
-	};
-
 });
 
 /*********************************************************************
@@ -57,22 +53,28 @@ app.controller('MealCreateCtrl', function ($scope,
 		//TODO
 	};
 
+
 	$scope.addPicture = function () {
-		//var options = {
-		//	quality: 50,
-		//	destinationType: Camera.DestinationType.DATA_URL,
-		//	sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-		//	allowEdit: true,
-		//	encodingType: Camera.EncodingType.JPEG,
-		//	targetWidth: 480,
-		//	popoverOptions: CameraPopoverOptions,
-		//	saveToPhotoAlbum: false
-		//};
-
-
-		//TODO
-
-
-	};
-
+		console.log("camera");
+		var options = {
+			quality: 50,
+			destinationType: Camera.DestinationType.DATA_URL,
+			sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+			allowEdit: true,
+			encodingType: Camera.EncodingType.JPEG,
+			targetWidth: 480,
+			popoverOptions: CameraPopoverOptions,
+			saveToPhotoAlbum: false
+		};
+		console.log("camera123");
+		$cordovaCamera.getPicture(options).then(function(imageData){
+			$scope.formData.picture = imageData;
+		}, function(err){
+			console.log(err);
+			$ionicPopup.alert({
+				title:'Error getting picture',
+				subTitle: 'We had a problem trying to get that picture, please try again'
+			});
+		});
+		};
 });
