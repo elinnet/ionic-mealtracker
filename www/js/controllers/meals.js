@@ -8,7 +8,7 @@ app.controller('MealListCtrl', function ($scope, $ionicLoading, MealService) {
 
 	$scope.meals = MealService;
 
-	$ionicLoading.show();
+	// $ionicLoading.show();
 	$scope.meals.load().then(function () {
 		$ionicLoading.hide();
 	});
