@@ -21,8 +21,8 @@
 					       ng-required="true" >
 				</label >
 				<div class="form-errors"
-				     ng-messages="signupForm.name.$error"
-				     ng-messages-include="templates/form-errors.html" >
+				     ng-messages="signupForm.name.$error">
+				     <div ng-messages-include="templates/form-errors.html" ></div>
 				</div >
 
 				<label class="item item-input item-floating-label"
@@ -35,8 +35,8 @@
 					       ng-required="true" >
 				</label >
 				<div class="form-errors"
-				     ng-messages="signupForm.email.$error"
-				     ng-messages-include="templates/form-errors.html" >
+				     ng-messages="signupForm.email.$error">
+				     <ng-messages-include="templates/form-errors.html" ></div>
 				</div >
 
 
@@ -51,11 +51,11 @@
 					       ng-minlength="4" >
 				</label >
 				<div class="form-errors"
-				     ng-messages="signupForm.password.$error"
-				     ng-messages-include="templates/form-errors.html" >
-					<div class="form-error"
+				     ng-messages="signupForm.password.$error">
+				     <div ng-messages-include="templates/form-errors.html" ></div>
+					  <div class="form-error"
 					     ng-message="minlength" >Password too short
-					</div >
+					  </div >
 				</div >
 
 
