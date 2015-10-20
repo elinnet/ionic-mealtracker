@@ -13,6 +13,8 @@
 		<form name="signupForm"
 		      novalidate=""
 		      ng-submit="submit(signupForm)" >
+
+				<p>test123</p>
 			<ion-list >
 
 				<label class="item item-input item-floating-label"
@@ -28,6 +30,7 @@
 				     ng-messages="signupForm.name.$error"
 				     ng-messages-include="templates/form-errors.html" >
 				</div >
+
 
 				<label class="item item-input item-floating-label"
 				       ng-class="{'has-error':signupForm.email.$invalid}" >
