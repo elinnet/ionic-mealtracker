@@ -11,11 +11,11 @@ app.controller('LoginCtrl', function ($scope, $state, AuthService) {
 	};
 
 	$scope.login = function (form) {
-		console.log("LoginCtrl::login");
+
 		if (form.$valid){
+			console.log("LoginCtrl::login");
+			AuthService.login($scope.formData.email,$scope.formData.password);
 			//TODO
-		} else {
-		console.log("Invalid form");
 		}
 
 	};

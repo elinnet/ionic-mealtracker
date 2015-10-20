@@ -6,6 +6,22 @@ app.service('AuthService', function ($q, $ionicPopup) {
 		login: function (email, password) {
 			var d = $q.defer();
 
+			Parse.User.logIn(email,password,{
+				success: function(user){
+					console.log("Logged In");
+					self.user = user;
+					d.resolve(self.user);
+				},
+				error: function(user,error){
+					$ionicPopup.alert({
+						title: 'Login Error',
+						subTitle: error.message
+					});
+					d.reject(error);
+				}
+
+			});
+
 
 			return d.promise;
 		},
