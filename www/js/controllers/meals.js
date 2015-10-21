@@ -50,7 +50,7 @@ app.controller('MealCreateCtrl', function ($scope,
 
 	$scope.trackMeal = function (form) {
 		if (form.$valid){
-			console.log("MealCreateCtrl::trackMeal");
+			 console.log("MealCreateCtrl::trackMeal");
 		}
 
 	};
