@@ -57,6 +57,7 @@ app.controller('MealCreateCtrl', function ($scope,
 			 MealService.track($scope.formData).then(function(){
 				 $scope.resetFormData();
 				 $ionicLoading.hide();
+				 form.$setPristine(true);
 				 $state.go("tab.meals");
 			 });
 		}

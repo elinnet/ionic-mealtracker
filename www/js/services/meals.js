@@ -41,7 +41,7 @@ app.service("MealService", function ($q, AuthService) {
 			meal.set("picture", file);
 			meal.set("title", data.title);
 			meal.set("category", data.category);
-			meal.set("calories", parse(data.calories));
+			meal.set("calories", parseInt(data.calories));
 			meal.set("created", new Date());
 
 			meal.save(null, {
