@@ -51,8 +51,15 @@ app.controller('MealCreateCtrl', function ($scope,
 	$scope.trackMeal = function (form) {
 		if (form.$valid){
 			 console.log("MealCreateCtrl::trackMeal");
-		}
 
+			 $ionicLoading.show();
+
+			 MealService.track($scope.formData).then(function(){
+				 $scope.resetFormData();
+				 $ionicLoading.hide();
+				 $state.go("tab.meals");
+			 });
+		}
 	};
 
 
