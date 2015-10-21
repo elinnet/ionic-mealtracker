@@ -21,6 +21,7 @@ app.controller('AccountCtrl', function ($scope, $state, AuthService) {
 
 	$scope.logout = function () {
 		console.log("AccountCtrl::logout");
-		//TODO
+		Parse.User.logOut();
+		$state.go("login");
 	};
 });
