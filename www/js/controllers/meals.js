@@ -49,8 +49,10 @@ app.controller('MealCreateCtrl', function ($scope,
 
 
 	$scope.trackMeal = function (form) {
-		console.log("MealCreateCtrl::trackMeal");
-		//TODO
+		if (form.$valid){
+			console.log("MealCreateCtrl::trackMeal");
+		}
+
 	};
 
 

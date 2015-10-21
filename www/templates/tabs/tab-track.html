@@ -24,7 +24,7 @@
 					       ng-required="true" >
 				</label >
 				<div class="form-errors"
-				     ng-messages="createForm.title.$error">
+				     ng-messages="createForm.title.$error" ng-if="submitted">
 				     <div ng-messages-include="templates/form-errors.html" ></div>
 				</div >
 
@@ -36,7 +36,7 @@
 					</div >
 					<select name="category"
 					        ng-model="formData.category"
-					        ng-required="true" >
+					        ng-required="true" ng-if="submitted" >
 						<option selected
 						        value="" >Please Choose
 						</option >
@@ -84,7 +84,7 @@
 
 			<div class="padding" >
 				<button class="button button-positive button-block"
-				        type="submit" >Create
+				        type="submit" ng-click="submitted=true" >Create
 				</button >
 			</div >
 		</form >
